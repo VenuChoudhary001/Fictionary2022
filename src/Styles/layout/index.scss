@@ -1,0 +1,76 @@
+@import "header";
+@import "footer";
+* {
+  margin: 0;
+  padding: 0;
+   overflow: hidden;
+   text-decoration: none;
+  @media screen and (max-width: 600px) {
+    overflow: visible;
+  }
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    background-color: $black;
+    // background: url(../../Assets/Images/bg3.jpg) no-repeat center/cover;
+    // animation: glitch 4s infinite linear;
+
+    // @keyframes glitch {
+    //   0%,20%,40%,60%,80%{
+    //     background-position: 20px 0;
+    //   }
+    //   10%,30%,50%,70%,90%,100%{
+    //     background-position: 1px 0;
+    //   }
+    // }
+  }
+  .bg-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    opacity: 0.9;
+    mix-blend-mode: hard-light;
+    z-index: 20;
+    @include glitchBackground;
+  }
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 22;
+  .container {
+    @media screen and (max-width: 1300px) {
+      max-width: calc(100vw - 10%);
+      margin: 1px auto;
+    }
+    @media screen and (max-width: 600px) {
+      max-width: calc(100vw - 5%);
+      margin: 1px auto;
+    }
+    @media screen and (min-width: 1301px) {
+      max-width: 1301px;
+      margin: 1px auto;
+    }
+  }
+  
+}

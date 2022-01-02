@@ -1,0 +1,27 @@
+.text-box{
+ 
+    width: 50%;
+    input{
+        width: 100%;
+        outline: none;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid $primary;
+        padding: 5px;
+        font-size: 1.5rem;
+        color: $primary;
+       font-family: 'Poppins';
+       
+        &::placeholder{
+            color: $primary;
+            opacity: 0.5;
+            font-weight: 300;
+        }
+    }
+    @media screen and (max-width:600px) {
+        width: 100%;
+        input{
+         font-size: 1rem;   
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.header {
+  margin-top: 5%;
+  .sign__word {
+    font-size: 5.6rem;
+    text-align: center;
+    line-height: 1;
+    color: $primary;
+    font-weight: bold;
+    
+    font-family: "SquareEngine";
+    display: block;
+    //   &::after {
+    //     content: "FICTIONARY";
+    //     display: block;
+    //     transform: rotateX(180deg);
+    //     opacity: 0.2;
+    //   }
+@include neon;
+   
+    @media screen and (max-width:900px) {
+     font-size:3.5rem;
+    }
+    @media screen and (max-width:600px){
+        font-size: 2rem;
+    }
+  }
+}

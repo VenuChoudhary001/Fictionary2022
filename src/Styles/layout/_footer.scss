@@ -1,0 +1,10 @@
+footer{
+    @include flexCenter;
+  margin-top: 50px;
+    img{
+        height: 50px;
+        object-fit: contain;
+        display: block;
+        
+    }
+}

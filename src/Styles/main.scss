@@ -1,0 +1,13 @@
+@font-face {
+    font-family:"SquareEngine";
+    src:local("SquareEngine"),url(../Assets/Fonts/SquareEngine050Apex-4rl.ttf);
+}
+@font-face {
+    font-family:"AlienCyborg";
+    src:local("AlienCyborg"),url("../Assets/Fonts/BraveEightyoneRegular-ZVGvm.ttf");
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import './utils/index.scss';
+@import './anims/index.scss';
+@import './components/index.scss';
+@import './layout/index.scss';

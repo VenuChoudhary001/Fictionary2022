@@ -1,0 +1,41 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 35;
+  .main {
+    // background-color: $dark-black;
+    backdrop-filter: blur(25);
+    // z-index: 35;
+    width: fit-content;
+    height: max-content;
+    padding: 3%;
+
+    min-width: 50%;
+    @include flexCenter;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.68);
+    border: 3px solid rgba(239, 0, 129, 0.89);
+    box-sizing: border-box;
+    backdrop-filter: blur(52px);
+    border-radius: 6px;
+    .modal-header {
+      img {
+        width: 100px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(223, 218, 218, 0.32);
+  backdrop-filter: blur(25px);
+  z-index: 32;
+}
