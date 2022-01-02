@@ -1,5 +1,4 @@
 import React from 'react'
-import Text from '../Assets/Images/text.png'
 const Header = () => {
     return (
       <>
