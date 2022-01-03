@@ -34,7 +34,7 @@ const Timer = () => {
          calculateTime();
        }, 1000);
      }, []);
-     if(sec==undefined || days==undefined || hours==undefined || mins==undefined){
+     if(sec===undefined || days===undefined || hours===undefined || mins===undefined){
         return <>
         <Loading/>
         </>
