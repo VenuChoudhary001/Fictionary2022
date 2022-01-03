@@ -1,4 +1,5 @@
 .btn{
+
     button{
         cursor: pointer;
         outline:none;
@@ -7,8 +8,17 @@
         background-color: $primary;
         color: black;
         width: 30%;
-        font-family: 'Poppins';
-        font-weight: 600;
-        
+     font-family: 'AlienCyborg';
+            letter-spacing: 3px;
+            font-weight: bold;
+        position: relative;
+        font-size: 1.2rem;
+        color: $dark-black;
+        @media screen and (max-width:600px) {
+            font-size: 1rem;
+            width: fit-content;
+            font-weight: 400;
+        }
     }
+ 
 }

@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import Modal from './Modal';
 const Navbar = () => {
+  const [showRules,setShowRules]=useState(false);
+  const handleClose=()=>{
+    setShowRules(false);
+  }
     return (
       <>
         <section className="navbar">
           <main className="nav-group">
-            <div className="nav-item">
+            <NavLink to='/' className="nav-item">
               <div className="nav-icon">
                 <svg
                   width="38"
@@ -21,9 +26,8 @@ const Navbar = () => {
                 </svg>
               </div>
               <div className="nav-text">Me</div>
-            </div>
+            </NavLink>
             <NavLink className="nav-item" to="/home">
-              {/* <div className="nav-item"> */}
               <div className="nav-icon">
                 <svg
                   width="38"
@@ -39,9 +43,8 @@ const Navbar = () => {
                 </svg>
               </div>
               <div className="nav-text">Home</div>
-              {/* </div> */}
             </NavLink>
-            <div className="nav-item">
+            <NavLink to="/leaderboard" className="nav-item">
               <div className="nav-icon">
                 <svg
                   width="38"
@@ -57,8 +60,8 @@ const Navbar = () => {
                 </svg>
               </div>
               <div className="nav-text">Leaderboard</div>
-            </div>
-            <div className="nav-item">
+            </NavLink>
+            <div className="nav-item" onClick={()=>setShowRules(true)}>
               <div className="nav-icon">
                 <svg
                   width="38"
@@ -77,6 +80,7 @@ const Navbar = () => {
             </div>
           </main>
         </section>
+      {showRules &&  <Modal setShow={handleClose}/>}
       </>
     );
 }

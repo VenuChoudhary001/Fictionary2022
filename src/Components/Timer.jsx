@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-
+import Loading from './Loading';
 const Timer = () => {
      const [days, setDays] = useState();
      const [hours, setHours] = useState();
@@ -7,7 +7,7 @@ const Timer = () => {
      const [sec, setSec] = useState();
      const calculateTime = () => {
        const date = new Date();
-       const dDay = new Date("4 January 2022");
+       const dDay = new Date("6 January 2022");
        let dayCount = Math.floor((dDay - date) / (1000 * 24 * 60 * 60));
        let hrsCount = Math.floor(
          ((dDay - date) % (1000 * 24 * 60 * 60)) / (1000 * 60 * 60)
@@ -34,11 +34,11 @@ const Timer = () => {
          calculateTime();
        }, 1000);
      }, []);
-    //  if(!sec || !days || !hours || !mins){
-    //     return <>
-    //     <Loading/>
-    //     </>
-    //  }
+     if(!sec || !days || !hours || !mins){
+        return <>
+        <Loading/>
+        </>
+     }
     return (
       <>
         <main className="timer">

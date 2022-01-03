@@ -1,37 +1,47 @@
 .loading{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 45;
+@include flexCenter;
+ min-height: 100vh;
+background: rgba(223, 218, 218, 0.32);
+  backdrop-filter: blur(18px);
+.clock-loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid $clock-color;
+  border-radius: 50%;
+}
+.clock-loader::before, .clock-loader::after {
+  position: absolute;
+  content: "";
+  top: calc($clock-radius * 0.25);
+  width: $clock-thickness;
+  background: $clock-color;
+  border-radius: 10px;
+  transform-origin: center calc(100% - calc($clock-thickness / 2));
+  animation: spin infinite linear;
+}
+.clock-loader::before {
+  height:$clock-minute-length;
+  animation-duration: 2s;
+}
+.clock-loader::after {
+  top: calc($clock-radius * 0.25 + $clock-hour-length);
+  height:$clock-hour-length;
+  animation-duration: 15s;
+}
 
-    .circle{
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background-color: #fff;
-        animation: move 500ms linear 0ms infinite;
-        margin-right: 30px;
-        
-        &:first-child{
-          position: absolute;
-          top:0;
-          left:0;
-          animation: grow 500ms linear 0ms infinite;
-        }
-        
-        &:last-child{
-          position: absolute;
-          top: 0;
-          right: 0;
-          margin-right: 0;
-          animation: grow 500ms linear 0s infinite reverse;
-        }
-      }
-    
-    
-    @keyframes grow {
-      from {transform: scale(0,0); opacity: 0;}
-      to {transform: scale(1,1); opacity: 1;}
-    }
-    
-    @keyframes move {
-      from {transform: translateX(0px)}
-      to {transform: translateX(45px)}
-    }
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
 }

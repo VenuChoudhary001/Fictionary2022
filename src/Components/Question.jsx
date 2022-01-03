@@ -2,10 +2,17 @@ import React,{useState} from "react";
 import Button from "./Button";
 import TextBox from "./TextBox";
 import Kame from '../Assets/Sounds/among.mp3'
+import Modal from "./Modal";
 const Question = () => {
   const [play,setPlay]=useState(false);
+  const [show,setShow]=useState(false);
   const handleClick=()=>{
-    setPlay(true)
+    setPlay(true);
+    setShow(true);
+  }
+  const handleClose=()=>{
+    setShow(false);
+    setPlay(false)
   }
   return (
     <>
@@ -38,13 +45,14 @@ const Question = () => {
                 />
               </svg>
             </div>
-            <div className="text">Click to see the hint</div>
+            <div className="text">HINT</div>
           </div>
           <TextBox placeholder="Type your answer" />
 
-          <Button lable="SUBMIT" action={handleClick} />
+          <Button lable="SUBMIT" type="glitch" action={handleClick} />
         </main>
       </section>
+      {show && <Modal setShow={handleClose}/>}
     </>
   );
 };

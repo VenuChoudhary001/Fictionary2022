@@ -1,34 +1,4 @@
-.modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 35;
-  .main {
-    // background-color: $dark-black;
-    backdrop-filter: blur(25);
-    // z-index: 35;
-    width: fit-content;
-    height: max-content;
-    padding: 3%;
 
-    min-width: 50%;
-    @include flexCenter;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.68);
-    border: 3px solid rgba(239, 0, 129, 0.89);
-    box-sizing: border-box;
-    backdrop-filter: blur(52px);
-    border-radius: 6px;
-    .modal-header {
-      img {
-        width: 100px;
-        object-fit: contain;
-      }
-    }
-  }
-}
 .overlay {
   position: fixed;
   top: 0;
@@ -36,6 +6,75 @@
   width: 100vw;
   height: 100vh;
   background: rgba(223, 218, 218, 0.32);
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(18px);
   z-index: 32;
+}
+
+
+/*
+
+ background: rgba(0, 0, 0, 0.68);
+    border: 3px solid rgba(239, 0, 129, 0.89);
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    border-radius: 6px;
+*/
+
+.modal--{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 42;
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark-black;
+  .close{
+    color: white;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 45;
+  }
+  .main{
+  @include flexCenter;
+  flex-direction: column;
+   .modal--title{
+     font-family: 'AlienCyborg';
+     font-weight: 600;
+     font-size: 3.5rem;
+     color: white;
+     letter-spacing: 5px;
+     @media screen and (max-width:900px) {
+       font-size: 1.8rem;
+       letter-spacing: 6px;
+     }
+   }
+   .modal--body{
+     padding: 10px 20px;
+     color: white;
+     font-family: 'Poppins';
+     font-size: 1rem;
+     @include flexCenter;
+     flex-direction: column;
+     max-width: 700px;
+     
+   }
+   transition: all 200ms ease-in-out;
+   animation: modal 0.2s linear;
+   @keyframes modal {
+     0%{
+       opacity: 0;
+       transform: scale(0.4);
+     }
+     50%{
+       opacity: 0.5;
+       transform: scale(0.8);
+     }
+     100%{
+       opacity: 1;
+       transform: scale(1);
+     }
+   }
+  }
 }

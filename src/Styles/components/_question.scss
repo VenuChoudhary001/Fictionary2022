@@ -1,6 +1,7 @@
 .ques{
-    margin: 5% 0;
+    margin: 1% 0;
     position: relative;
+    
     .question{
         @include grid;
         max-width: 80%;
@@ -10,27 +11,48 @@
         text-transform: capitalize;
         font-style: italic;
          font-family: 'Poppins', sans-serif;
-       letter-spacing:3px;
+       letter-spacing:1px;
+       line-height: 19.5px;
        font-weight: 400;
         position: relative;
              padding: 2rem;
-             transform: skewX(-10deg);
+             transform: skewX(-8deg);
+             font-size: 1.1rem;
              border: 2px solid $primary;
+            //  border-radius: 6px;
         .hint{
-            background-color: $dark-black;
-            color: $primary;
+            background-color: $primary;
+            color:black;
             padding: 10px;
             max-width: fit-content;
+            font-weight: bold;
+           font-family: 'AlienCyborg';
+            letter-spacing: 3px;
+           transform: skewX(-4deg);
             cursor: pointer;
             @include flexCenter;
             .icon{
                 svg{
-
+                    path{
+                        fill:black;
+                    }
                     margin-right: 8px;
+                    // transform: skewX(-4deg);
                 }
             }
             &:hover{
-                background-color: rgba(0 0 0 / 0.68);
+                transition: all 200ms ease-in-out;
+                background-color: $dark-pink;
+        
+                font-weight: bold;
+                color: $primary;
+                .icon{
+                    svg{
+                        path{
+                            fill: $primary;
+                        }
+                    }
+                }
             }
         }
         .btn{
@@ -45,15 +67,27 @@
                  position: absolute;
             bottom:0px;
             right: 0px;
+            color: black;
+            &:hover{
+                background-color: $dark-pink;
+                color: $primary;
+                transition: all 200ms ease-in-out;
+
+            }
             }
         }
         @media screen and (max-width:700px) {
             transform: skewX(0deg);
-            font-size: 0.8rem;
+            font-size: 14px;
             padding: 2rem 1rem;
-             border: 1px solid $primary;
-             border-radius: 3px;
+            //  border: 1px solid $primary;
+             border-radius: 8px;
              font-style: normal;
+             letter-spacing: normal;
+             line-height: 19.5px;
+             border: none;
+             border-top: 2px solid white;
+             border-bottom: 2px solid white;
              .btn{
                  position:relative;
                  bottom: 0;
@@ -68,5 +102,9 @@
             }
              }
         }
+            }
+            @media screen and (max-width:900px) {
+                overflow: scroll;
+                max-height: 60vh;
             }
 }
