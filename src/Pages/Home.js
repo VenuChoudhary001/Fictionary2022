@@ -1,10 +1,12 @@
 import React from 'react'
 import Question from '../Components/Question'
+import Header from '../Layout/Header'
 
 const Home = () => {
   
     return (
         <>
+        <Header/>
         <section className="home">
 
         <div className="header">
@@ -15,7 +17,6 @@ const Home = () => {
         </div>
         </section>
           <Question/>  
-          {/* <Modal/> */}
         </>
     )
 }

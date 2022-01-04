@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import BG3 from "../Assets/Images/bg3.jpg";
-import Header from './Header';
+
 import Career from '../Assets/Sounds/03Career1.mp3';
-import Footer from './Footer';
+
 import Navbar from '../Components/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
 const LAYOUT = ({children}) => {
@@ -29,10 +29,8 @@ const LAYOUT = ({children}) => {
 
           <Navbar/>
           <div className="container">
-          <Header />
 
           {children}
-          <Footer/>
           </div>
           </Router>
         </section>
